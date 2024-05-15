@@ -45,6 +45,8 @@ class DefaultDayTile extends StatelessWidget {
 
     return Expanded(
       child: GestureDetector(
+        onTap: () => handleTap(context),
+        behavior: HitTestBehavior.translucent,
         child: Container(
           height: 40.0,
           decoration: boxDecoration,
@@ -55,14 +57,12 @@ class DefaultDayTile extends StatelessWidget {
               style: TextStyle(
                 color: daySelected
                     ? Colors.white
-                    : Theme.of(context).textTheme.bodyText1!.color,
+                    : Theme.of(context).textTheme.bodyMedium!.color,
                 fontSize: 14,
               ),
             ),
           ),
         ),
-        onTap: () => handleTap(context),
-        behavior: HitTestBehavior.translucent,
       ),
     );
   }
